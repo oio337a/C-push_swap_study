@@ -6,7 +6,7 @@
 #    By: yongmipa <yongmipa@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 15:55:28 by yongmipa          #+#    #+#              #
-#    Updated: 2023/01/09 21:12:30 by yongmipa         ###   ########seoul.kr   #
+#    Updated: 2023/01/10 19:11:41 by yongmipa         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ LIB_DIR		= ./libft/
 LIB_NAME	= ./libft/libft.a
 INCS		= -I includes
 
-SRC			=	push_swap.c error.c
+SRC			=	push_swap.c error.c init.c
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRC))
 LIBS		=	$(addprefix $(LIB_DIR), $(LIB_NAME))
 OBJS		=	$(SRCS:.c=.o)

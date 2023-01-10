@@ -1,34 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   func_utill_1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yongmipa <yongmipa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 15:47:48 by yongmipa          #+#    #+#             */
-/*   Updated: 2023/01/10 19:10:54 by yongmipa         ###   ########seoul.kr  */
+/*   Created: 2023/01/10 19:14:22 by yongmipa          #+#    #+#             */
+/*   Updated: 2023/01/10 19:15:46 by yongmipa         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# define TRUE	1
-# define FALSE	0
-
-# include "../libft/libft.h"
-# include <stddef.h>
-# include <stdio.h>
-
-typedef struct s_stack
-{
-	int	*data;
-	int	front;
-	int	rear;
-}	t_stack;
-
-int		print_error(char *msg);
-void	init_stack(t_stack *stack, int ac);
-void	fill_stack(t_stack *stack, int ac, char const *av[]);
-
-#endif

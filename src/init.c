@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yongmipa <yongmipa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 15:47:48 by yongmipa          #+#    #+#             */
-/*   Updated: 2023/01/10 19:10:54 by yongmipa         ###   ########seoul.kr  */
+/*   Created: 2023/01/10 17:53:50 by yongmipa          #+#    #+#             */
+/*   Updated: 2023/01/10 19:10:39 by yongmipa         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/push_swap.h"
 
-# define TRUE	1
-# define FALSE	0
-
-# include "../libft/libft.h"
-# include <stddef.h>
-# include <stdio.h>
-
-typedef struct s_stack
+void	init_stack(t_stack *stack, int ac)
 {
-	int	*data;
-	int	front;
-	int	rear;
-}	t_stack;
+	stack = malloc(sizeof(t_stack));
+	stack->data = malloc(sizeof(int) * ac);
+	stack->front = 0;
+	stack->rear = 0;
+}
 
-int		print_error(char *msg);
-void	init_stack(t_stack *stack, int ac);
-void	fill_stack(t_stack *stack, int ac, char const *av[]);
+void	fill_stack(t_stack *stack, int ac, char const *av[])
+{
+	int	i;
 
-#endif
+	i = 1;
+	while (stack->rear < ac)
+	{
+		stack->data[i] = ft_atoi(av[i]);
+		stack->rear++;
+	}
+}
