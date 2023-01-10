@@ -6,7 +6,7 @@
 /*   By: yongmipa <yongmipa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:47:48 by yongmipa          #+#    #+#             */
-/*   Updated: 2023/01/10 19:54:24 by yongmipa         ###   ########seoul.kr  */
+/*   Updated: 2023/01/10 22:04:17 by yongmipa         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_stack
 }	t_stack;
 
 int		print_error(char *msg);
-void	init_stack(t_stack *stack, int ac);
+t_stack	*init_stack(int ac);
 void	fill_stack(t_stack *stack, int ac, char const *av[]);
 
 #endif

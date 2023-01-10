@@ -6,7 +6,7 @@
 /*   By: yongmipa <yongmipa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:47:51 by yongmipa          #+#    #+#             */
-/*   Updated: 2023/01/10 19:07:23 by yongmipa         ###   ########seoul.kr  */
+/*   Updated: 2023/01/10 22:09:21 by yongmipa         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ int	main(int ac, char const *av[])
 
 	if (!is_validate_argument(ac, av))
 		exit(0);
-	init_stack(a_stack, ac);
-	init_stack(b_stack, ac);
+	a_stack = init_stack(ac);
+	b_stack = init_stack(ac);
 	fill_stack(a_stack, ac, av);
+	printf("%d, %d, %d", a_stack->data[0], a_stack->data[2], a_stack->data[3]);
+	printf("\n%d, rear", a_stack->rear);
 	return (0);
 }
