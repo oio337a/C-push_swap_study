@@ -6,7 +6,7 @@
 /*   By: yongmipa <yongmipa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:47:48 by yongmipa          #+#    #+#             */
-/*   Updated: 2023/01/10 19:10:54 by yongmipa         ###   ########seoul.kr  */
+/*   Updated: 2023/01/10 19:54:24 by yongmipa         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stack
 	int	*data;
 	int	front;
 	int	rear;
+	int	len;
 }	t_stack;
 
 int		print_error(char *msg);
