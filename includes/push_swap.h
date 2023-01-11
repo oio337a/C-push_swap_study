@@ -6,7 +6,7 @@
 /*   By: yongmipa <yongmipa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:47:48 by yongmipa          #+#    #+#             */
-/*   Updated: 2023/01/10 22:04:17 by yongmipa         ###   ########seoul.kr  */
+/*   Updated: 2023/01/11 16:43:54 by yongmipa         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,15 @@ typedef struct s_stack
 int		print_error(char *msg);
 t_stack	*init_stack(int ac);
 void	fill_stack(t_stack *stack, int ac, char const *av[]);
+
+int		is_empty(t_stack *stack);
+void	add_front(t_stack *stack, int data);
+void	add_rear(t_stack *stack, int data);
+void	delete_front(t_stack *stack);
+void	delete_rear(t_stack *stack);
+
+void	rotate_stack(t_stack *stack);
+void	rrotate_stack(t_stack *stack);
+void	swap_stack(t_stack *stack);
 
 #endif
