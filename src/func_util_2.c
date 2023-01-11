@@ -6,7 +6,7 @@
 /*   By: yongmipa <yongmipa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 15:54:02 by yongmipa          #+#    #+#             */
-/*   Updated: 2023/01/11 17:09:27 by yongmipa         ###   ########seoul.kr  */
+/*   Updated: 2023/01/11 20:10:24 by yongmipa         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	rotate_stack(t_stack *stack)
 	delete_front(stack);
 }
 
-void	rrotate_stack(t_stack *stack)
+void	reverse_rotate_stack(t_stack *stack)
 {
 	int	temp;
 
