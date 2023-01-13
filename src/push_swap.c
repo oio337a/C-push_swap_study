@@ -6,7 +6,7 @@
 /*   By: yongmipa <yongmipa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:47:51 by yongmipa          #+#    #+#             */
-/*   Updated: 2023/01/11 23:03:28 by yongmipa         ###   ########seoul.kr  */
+/*   Updated: 2023/01/13 18:05:36 by yongmipa         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,10 @@
 int	main(int ac, char const *av[])
 {
 	t_stack	*a_stack;
-	t_stack	*b_stack;
 
 	if (!is_validate_argument(ac, av))
 		exit(print_error("Invalide arguments"));
 	a_stack = init_stack(ac);
-	b_stack = init_stack(ac);
-	fill_stack(a_stack, ac, av);
 
-
-
-
-	printf("%d, %d, %d, %d", a_stack->data[0], a_stack->data[1], a_stack->data[2], a_stack->data[3]);
-	printf("\n%d, %d, front", a_stack->front, a_stack->data[a_stack->front]);
-	printf("\n%d, %d, rear", a_stack->rear, a_stack->data[a_stack->rear]);
-	printf("\n---------------------------------------------------------------------\n");
-	rotate_stack(a_stack);
-	printf("%d, %d, %d, %d", a_stack->data[0], a_stack->data[1], a_stack->data[2], a_stack->data[3]);
-	printf("\n%d, %d, front", a_stack->front, a_stack->data[a_stack->front]);
-	printf("\n%d, %d, rear", a_stack->rear, a_stack->data[a_stack->rear]);
-	printf("\n---------------------------------------------------------------------\n");
-	rrotate_stack(a_stack);
-	printf("%d, %d, %d, %d", a_stack->data[0], a_stack->data[1], a_stack->data[2], a_stack->data[3]);
-	printf("\n%d, %d, front", a_stack->front, a_stack->data[a_stack->front]);
-	printf("\n%d, %d, rear", a_stack->rear, a_stack->data[a_stack->rear]);
-	printf("\n---------------------------------------------------------------------\n");
-	swap_stack(a_stack);
-	printf("%d, %d, %d, %d", a_stack->data[0], a_stack->data[1], a_stack->data[2], a_stack->data[3]);
-	printf("\n%d, %d, front", a_stack->front, a_stack->data[a_stack->front]);
-	printf("\n%d, %d, rear", a_stack->rear, a_stack->data[a_stack->rear]);
-
-
-	// printf("\n---------------------------------------------------------------------\n");
-	// delete_front(a_stack);
-	// printf("%d, %d, %d, %d", a_stack->data[0], a_stack->data[1], a_stack->data[2], a_stack->data[3]);
-	// printf("\n%d, %d, front", a_stack->front, a_stack->data[a_stack->front]);
-	// printf("\n---------------------------------------------------------------------\n");
-	// delete_rear(a_stack);
-	// printf("%d, %d, %d, %d", a_stack->data[0], a_stack->data[1], a_stack->data[2], a_stack->data[3]);
-	// printf("\n%d, %d, rear", a_stack->rear, a_stack->data[a_stack->rear]);
 	return (0);
 }

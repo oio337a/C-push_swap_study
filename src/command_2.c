@@ -6,7 +6,7 @@
 /*   By: yongmipa <yongmipa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:57:39 by yongmipa          #+#    #+#             */
-/*   Updated: 2023/01/11 19:57:44 by yongmipa         ###   ########seoul.kr  */
+/*   Updated: 2023/01/13 17:16:13 by yongmipa         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ void	rb(t_stack *b)
 
 void	rr(t_stack *a, t_stack *b)
 {
-	ft_putendl_fd("ra", STDOUT_FILENO);
+	ft_putendl_fd("rr", STDOUT_FILENO);
 	rotate_stack(a);
+	rotate_stack(b);
 }
 
 void	rra(t_stack *a)
