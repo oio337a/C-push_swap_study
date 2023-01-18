@@ -1,0 +1,1 @@
+SRC			=	command_push.c commend_reverse_rotate.c command_rotate.c command_swap.c error.c get_pivot.c greedy_algorithm.c main.c push_atoi.c que_data.c que_set.c validation.c
