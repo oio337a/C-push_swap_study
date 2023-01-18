@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:07:26 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 17:30:09 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/18 19:23:36 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,5 @@ int main(int ac, char *av[])
 		return (1);
 	len = count_argu(ac, av);
 	a_stack = init(len);
-
 	return (0);
 }

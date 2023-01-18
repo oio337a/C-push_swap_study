@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:06:30 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 17:21:43 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/18 19:22:30 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	rr(t_deque *stack_a, t_deque *stack_b);
 void	rra(t_deque *stack_a);
 void	rrb(t_deque *stack_b);
 void	rrr(t_deque *stack_a, t_deque *stack_b);
+void	check_duplication(t_deque *stack);
+int		check_sorted(t_deque *stack, int *arr);
 
 int		error(void);
 void	ft_free(char *strs[]);

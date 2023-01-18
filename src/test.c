@@ -7,14 +7,15 @@
 int main()
 {
 	t_deque *q;
+	int arr[] = {1, 2, 3};
 
 	q = init(4);
-	add_rear(q, 3);
 	add_rear(q, 2);
-	add_rear(q, 1);
-	a_stack_sort(q);
+	add_rear(q, 2);
+	add_rear(q, 3);
+	// a_stack_sort(q);
+	check_duplication(q);
 	printf("%d\n", q->data[(q->front + 1) % 4]);
 	printf("%d\n", q->data[(q->front + 2) % 4]);
 	printf("%d\n", q->data[q->rear]);
-	
 }
