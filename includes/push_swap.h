@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:06:30 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 16:00:18 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/18 17:21:43 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_deque
 	int	len;
 }t_deque;
 
+t_deque	*init(int len);
 int		*get_pivot(t_deque *q);
 void	add_front(t_deque *q, int data);
 void	add_rear(t_deque *q, int data);
@@ -55,5 +56,5 @@ void	ft_free(char *strs[]);
 int		ft_atoi2(const char *str);
 void	preprocess(t_deque *a_stack, t_deque *b_stack);
 int		is_empty(t_deque *q);
-void	init(t_deque *q);
+
 #endif

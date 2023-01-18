@@ -6,11 +6,11 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 20:47:45 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 15:24:46 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/18 17:38:05 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	add_front(t_deque *q, int data)
 {
@@ -42,5 +42,5 @@ void	delete_rear(t_deque *q)
 
 int	find_idx(int i, int len)
 {
-	return ((i + 1) % len);
+	return (i % len);
 }

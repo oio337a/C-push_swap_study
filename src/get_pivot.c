@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:29:40 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 15:41:52 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/18 17:28:39 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,17 @@ void	indexing_a_stack(t_deque *a_stack, int *tmp)
 int	*get_pivot(t_deque *a_stack)
 {
 	int	*tmp;
-	int	pivot[2];
+	int	*pivot;
 	int	i;
 
 	tmp = (int *)malloc(sizeof(int) * a_stack->len - 1);
+	pivot = (int *)malloc(sizeof(int) * 2);
 	i = -1;
 	while (++i < a_stack->len - 1)
 		tmp[i] = a_stack->data[i + 1];
-	tmp_sort(tmp, 0, a_stack->len - 1);
-	pivot[0] = tmp[a_stack->len / 3];
-	pivot[1] = tmp[(a_stack->len / 3) * 2];
+	tmp_sort(tmp, 0, a_stack->len - 2);
+	pivot[0] = tmp[(a_stack->len - 2) / 3];
+	pivot[1] = tmp[(a_stack->len - 2) - (a_stack->len - 2) / 3];
 	indexing_a_stack(a_stack, tmp);
 	free(tmp);
 	return (pivot);

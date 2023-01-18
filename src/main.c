@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:07:26 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 16:11:58 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/18 17:30:09 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,13 @@ static int	count_argu(int ac, char *av[])
 
 int main(int ac, char *av[])
 {
-	int	len;
+	int		len;
+	t_deque	*a_stack;
 
-	// agument 처리중!!
 	if (ac < 2)
 		return (1);
 	len = count_argu(ac, av);
-	printf("%d", len);
+	a_stack = init(len);
+
 	return (0);
 }

@@ -6,17 +6,26 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:22:23 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 15:20:52 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/18 17:28:42 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-void	init(t_deque *q)
+t_deque	*init(int len)
 {
+	t_deque	*q;
+
+	q = malloc(sizeof(t_deque));
+	if (!q)
+		exit(error());
+	q->data = malloc(sizeof(int) * len);
+	if (!q->data)
+		exit(error());
 	q->front = 0;
 	q->rear = 0;
-	q->data = (int *)malloc(sizeof(int) * q->len);
+	q->len = len;
+	return (q);
 }
 
 int	is_empty(t_deque *q)

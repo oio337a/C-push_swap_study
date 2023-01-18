@@ -13,7 +13,7 @@ LIB_DIR		= ./libft/
 LIB_NAME	= ./libft/libft.a
 INCS		= -I includes
 
-SRC			=	error.c main.c push_atoi.c 
+SRC			=	error.c main.c push_atoi.c que_set.c
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRC))
 LIBS		=	$(addprefix $(LIB_DIR), $(LIB_NAME))
 OBJS		=	$(SRCS:.c=.o)

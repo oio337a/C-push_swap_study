@@ -6,7 +6,11 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:07:16 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 15:07:18 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/18 18:22:42 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	check_duplication(t_deque *)
+{
+	
+}
