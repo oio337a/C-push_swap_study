@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:07:26 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 22:04:09 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 23:23:28 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int	main(int ac, char *av[])
 	int		len;
 	t_deque	*a_stack;
 	t_deque	*b_stack;
-	int		*pivot;
 
 	if (ac < 2)
 		return (1);
@@ -84,7 +83,6 @@ int	main(int ac, char *av[])
 			sa(a_stack);
 		exit(0);
 	}
-	pivot = get_pivot(a_stack);
 	b_stack = init(len + 1);
 	preprocess(a_stack, b_stack);
 	for (int i = 0; i < a_stack->len; i++)

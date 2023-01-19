@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 18:39:31 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 22:13:53 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 23:37:13 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,18 @@ void	use_rrb(t_deque *a_stack, t_deque *b_stack, int ra_count, int rrb_count)
 	if (ra_count > a_size / 2)
 	{
 		ra_count = a_size - ra_count;
-		while (ra_count-- || rrb_count--)
+		while (ra_count-- && rrb_count--)
 			rrr(a_stack, b_stack);
 		if (ra_count < rrb_count)
+		{
 			while (rrb_count--)
 				rrb(b_stack);
+		}
 		else if (rrb_count < ra_count)
+		{
 			while (ra_count--)
 				rra(a_stack);
+		}
 	}
 	else
 	{
@@ -45,18 +49,22 @@ void	use_rb(t_deque *a_stack, t_deque *b_stack, int ra_count, int rb_count)
 	a_size = get_stack_size(a_stack);
 	if (ra_count < a_size / 2)
 	{
-		ra_count = a_size - ra_count;
-		while (ra_count-- || rb_count--)
+		while (ra_count-- && rb_count--)
 			rr(a_stack, b_stack);
 		if (ra_count < rb_count)
+		{
 			while (rb_count--)
 				rb(b_stack);
+		}
 		else if (rb_count < ra_count)
+		{
 			while (ra_count--)
 				ra(a_stack);
+		}
 	}
 	else
 	{
+		ra_count = a_size - ra_count;
 		while (ra_count--)
 			rra(a_stack);
 		while (rb_count--)
@@ -70,7 +78,7 @@ int	get_a_min_index(t_deque *a_stack)
 	int	len;
 	int	min;
 	int	min_index;
-	
+
 	i = 0;
 	min = a_stack->data[find_idx((a_stack->front + 1), a_stack->len)];
 	min_index = find_idx((a_stack->front + 1), a_stack->len);
