@@ -6,17 +6,24 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:44:29 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 17:50:29 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 20:29:49 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+int	ft_abs(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}
+
 int	get_stack_size(t_deque *stack)
 {
 	if (stack->front < stack->rear)
 		return (stack->rear - stack->front);
-	return (stack->len - (stack->front - stack->rear));
+	return (stack->len - ft_abs(stack->front - stack->rear));
 }
 
 void	set_position(t_deque *stack, int *first, int *mid, int *last)
@@ -48,7 +55,7 @@ void	a_stack_sort(t_deque *stack)
 	else if (stack->data[mid] < stack->data[last]
 		&& stack->data[last] < stack->data[first])
 		ra(stack);
-	else
+	else if (stack->data[mid] < stack->data[first] && stack->data[last] < stack->data[mid])
 	{
 		sa(stack);
 		rra(stack);
@@ -78,12 +85,20 @@ void	preprocess(t_deque *a_stack, t_deque *b_stack)
 			if (is_empty(b_stack))
 				rb(b_stack);
 		}
-		else if (a_stack->data[i] > pivot[0] && a_stack->data[i] <= pivot[1])
+		else if (a_stack->data[i] > pivot[0] && a_stack->data[i] < pivot[1])
 			pb(a_stack, b_stack);
 		else
 			ra(a_stack);
 	}
-	while (get_stack_size(a_stack) != 3)
-		pb(a_stack, b_stack);
+	if (get_stack_size(a_stack) > 3)
+	{
+		while (1)
+		{
+			if (get_stack_size(a_stack) == 3)
+				break ;
+			pb(a_stack, b_stack);
+		}
+	}
 	a_stack_sort(a_stack);
+	// printf("%d %d %d", )
 }

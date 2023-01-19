@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:29:40 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 17:53:14 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 19:37:28 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	*get_pivot(t_deque *a_stack)
 		exit(0);
 	}
 	pivot[0] = tmp[(a_stack->len - 2) / 3];
-	pivot[1] = tmp[(a_stack->len - 2) - (a_stack->len - 2) / 3];
+	pivot[1] = tmp[(a_stack->len - 2) - ((a_stack->len - 2) / 3)];
 	indexing_a_stack(a_stack, tmp);
 	free(tmp);
 	return (pivot);

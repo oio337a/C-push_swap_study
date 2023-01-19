@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 20:47:45 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 17:38:05 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 20:16:22 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 void	add_front(t_deque *q, int data)
 {
 	q->data[q->front] = data;
-	q->front = (q->front -1 + q->len) % q->len;
+	q->front = (q->front - 1 + q->len) % q->len;
 }
 
 void	add_rear(t_deque *q, int data)
 {
-	q->rear = (q->rear + 1);
+	q->rear = find_idx(q->rear + 1, q->len);
 	q->data[q->rear] = data;
 }
 

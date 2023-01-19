@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:33:48 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 17:29:25 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 19:39:38 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	cost_calculate(t_deque *a_stack, int b_data)
 		cost = count_mid_cost(a_stack, b_data);
 	return (cost);
 }
-// 제가 중간값 루프 도는거 만들고 있으게요 함수.
 
 int	count_mid_cost(t_deque *a_stack, int data)
 {
@@ -46,4 +45,60 @@ int	count_mid_cost(t_deque *a_stack, int data)
 		i++;
 	}
 	return (count);
+}
+
+int	get_b_min_index(int *cost, int len)
+{
+	int	i;
+	int	min;
+
+	i = 0;
+	min = cost[0];
+	while (++i < len)
+	{
+		if (cost[i] < min)
+			min = cost[i];
+	}
+	i = -1;
+	while (++i < len)
+	{
+		if (cost[i] == min)
+			break ;
+	}
+	return (i);
+}
+
+int	*b_stack_cost(t_deque *a_stack, t_deque *b_stack)
+{
+	int	*cost;
+	int	b_len;
+	int	i;
+	int	b_data;
+
+	b_len = get_stack_size(b_stack);
+	cost = (int *)malloc(sizeof(int) * b_len);
+	i = -1;
+	while (++i < b_len)
+	{
+		b_data = b_stack
+			->data[find_idx((b_stack->front + 1) + i, b_stack->len)];
+		cost[i] = cost_calculate(a_stack, b_data);
+	}
+	return (cost);
+}
+
+void	greedy_sort(t_deque *a_stack, t_deque *b_stack)
+{
+	int	*cost;
+	int	min_index;
+	int	b_len;
+
+	cost = b_stack_cost(a_stack, b_stack);
+	b_len = get_stack_size(b_stack);
+	min_index = get_b_min_index(cost, get_stack_size(b_stack));
+	if (min_index > get_stack_size(b_stack) / 2)
+		use_rrr(a_stack, b_stack, b_len - cost[min_index], b_len - min_index);
+	else
+		use_rr(a_stack, b_stack, cost[min_index], min_index);
+	pa(a_stack, b_stack);
 }
