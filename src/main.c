@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:07:26 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 20:27:07 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 22:04:09 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	main(int ac, char *av[])
 	t_deque	*a_stack;
 	t_deque	*b_stack;
 	int		*pivot;
-	
+
 	if (ac < 2)
 		return (1);
 	len = count_argu(ac, av);
@@ -85,32 +85,22 @@ int	main(int ac, char *av[])
 		exit(0);
 	}
 	pivot = get_pivot(a_stack);
-	printf("pivot 1 >> %d, pivot 2 >> %d\n", pivot[0], pivot[1]);
 	b_stack = init(len + 1);
-
 	preprocess(a_stack, b_stack);
-	printf("after preprocess\n");
-	// sa(a_stack);
-	// ra(a_stack);
-	// printf("element!!!!!!! %d\n", a_stack->data[1]);
-	// printf("%d\n", a_stack->data[2]);
-	// printf("%d\n", a_stack->data[3]);
-	
-	printf("asdfasdf\n");
-	printf("size %d\n", get_stack_size(a_stack));
-	for (int i = 0; i < len + 1; i++)
-	{
-		printf("%d\n", a_stack->data[i]);
-	}
-	printf("f : %d, r : %d\n", a_stack->front, a_stack->rear);
-	// printf("%d\n", a_stack->data[find_idx(a_stack->front, a_stack->len)]);
-	// printf("%d\n", a_stack->data[find_idx(a_stack->front + 1, a_stack->len)]);
-	// printf("%d\n", a_stack->data[find_idx(a_stack->front + 2, a_stack->len)]);
-	// printf("%d\n", a_stack->data[find_idx(a_stack->rear, a_stack->len)]);
-	printf("\n");
-	// printf("top : %d rear : %d\n", a_stack->front, a_stack->rear);
-	
-
+	for (int i = 0; i < a_stack->len; i++)
+		printf("idx :%d value :%d\n", i, a_stack->data[i]);
+	printf("af : %d ar : %d\n", a_stack->front, a_stack->rear);
+	printf("---------------------------------------------------------\n");
+	for (int i = 0; i < b_stack->len; i++)
+		printf("idx :%d value :%d\n", i, b_stack->data[i]);
+	printf("bf : %d br : %d\n", b_stack->front, b_stack->rear);
+	while (!is_empty(b_stack))
+		greedy_sort(a_stack, b_stack);
+	// while (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] != 1)
+	// 	rra(a_stack);
+	for (int i = 0; i < a_stack->len; i++)
+		printf("idx :%d value :%d\n", i, a_stack->data[i]);
+	printf("f : %d r : %d\n", a_stack->front, a_stack->rear);
 	return (0);
 }
 

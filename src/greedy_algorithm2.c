@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:33:48 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 19:39:38 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 22:07:55 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	cost_calculate(t_deque *a_stack, int b_data)
 	else if (b_data > a_stack->data[a_stack->max])
 	{
 		cost = (a_stack->max - (a_stack->front + 1) + a_stack->len)
-			% a_stack->len;
+			% a_stack->len + 1;
 	}
 	else
 		cost = count_mid_cost(a_stack, b_data);
@@ -38,8 +38,10 @@ int	count_mid_cost(t_deque *a_stack, int data)
 
 	count = 1;
 	i = 0;
-	while (a_stack->data[find_idx(a_stack->front + 1 + i, a_stack->len)] < data
-		&& a_stack->data[find_idx(a_stack->front + 2 + i, a_stack->len)] > data)
+	while (!(a_stack->data
+			[find_idx(a_stack->front + 1 + i, a_stack->len)] < data
+			&& a_stack->data
+			[find_idx(a_stack->front + 2 + i, a_stack->len)] > data))
 	{
 		count++;
 		i++;
@@ -80,8 +82,7 @@ int	*b_stack_cost(t_deque *a_stack, t_deque *b_stack)
 	i = -1;
 	while (++i < b_len)
 	{
-		b_data = b_stack
-			->data[find_idx((b_stack->front + 1) + i, b_stack->len)];
+		b_data = b_stack->data[find_idx((b_stack->front + 1) + i, b_stack->len)];
 		cost[i] = cost_calculate(a_stack, b_data);
 	}
 	return (cost);
@@ -93,12 +94,20 @@ void	greedy_sort(t_deque *a_stack, t_deque *b_stack)
 	int	min_index;
 	int	b_len;
 
+	a_stack->min = get_a_min_index(a_stack);
+	a_stack->max = get_a_max_index(a_stack);
+	printf("min %d\n", a_stack->min);
+	printf("max %d\n", a_stack->max);
 	cost = b_stack_cost(a_stack, b_stack);
 	b_len = get_stack_size(b_stack);
 	min_index = get_b_min_index(cost, get_stack_size(b_stack));
-	if (min_index > get_stack_size(b_stack) / 2)
-		use_rrr(a_stack, b_stack, b_len - cost[min_index], b_len - min_index);
+	printf("min_index %d\n", min_index);
+	for (int i = 0; i < b_len; i++)
+		printf("cost[%d] : %d\n", i, cost[i]);
+	exit(1);
+	if (min_index > b_len / 2)
+		use_rrb(a_stack, b_stack, cost[min_index], b_len - min_index);
 	else
-		use_rr(a_stack, b_stack, cost[min_index], min_index);
+		use_rb(a_stack, b_stack, cost[min_index], min_index);
 	pa(a_stack, b_stack);
 }

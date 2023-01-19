@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:06:30 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 18:46:52 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 21:58:26 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,13 @@ void	tmp_sort(int *arr, int start, int end);
 void	fill_stack(int ac, char *av[], t_deque *a_stack);
 void	greedy_sort(t_deque *a_stack, t_deque *b_stack);
 
-void	use_rr(t_deque *a_stack,
-			t_deque *b_stack, int rra_count, int rrb_count);
-void	use_rrr(t_deque *a_stack,
-			t_deque *b_stack, int rra_count, int rrb_count);
+void	use_rb(t_deque *a_stack,
+			t_deque *b_stack, int ra_count, int rrb_count);
+void	use_rrb(t_deque *a_stack,
+			t_deque *b_stack, int ra_count, int rb_count);
+
+int		set_three(t_deque *stack, int first, int mid, int last);
+int		get_a_min_index(t_deque *a_stack);
+int		get_a_max_index(t_deque *a_stack);
 
 #endif

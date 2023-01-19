@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:44:29 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 20:29:49 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 20:58:21 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,22 @@ void	a_stack_sort(t_deque *stack)
 	int	first;
 	int	mid;
 	int	last;
+	int	judge;
 
 	set_position(stack, &first, &mid, &last);
-	if (stack->data[first] < stack->data[last]
-		&& stack->data[last] < stack->data[mid])
+	judge = set_three(stack, first, mid, last);
+	if (judge == 42)
 	{
 		sa(stack);
 		ra(stack);
 	}
-	else if (stack->data[mid] < stack->data[first]
-		&& stack->data[first] < stack->data[last])
+	if (judge == 43)
 		sa(stack);
-	else if (stack->data[first] < stack->data[mid]
-		&& stack->data[last] < stack->data[first])
+	if (judge == 44)
 		rra(stack);
-	else if (stack->data[mid] < stack->data[last]
-		&& stack->data[last] < stack->data[first])
+	if (judge == 45)
 		ra(stack);
-	else if (stack->data[mid] < stack->data[first] && stack->data[last] < stack->data[mid])
+	if (judge == 46)
 	{
 		sa(stack);
 		rra(stack);
@@ -100,5 +98,4 @@ void	preprocess(t_deque *a_stack, t_deque *b_stack)
 		}
 	}
 	a_stack_sort(a_stack);
-	// printf("%d %d %d", )
 }
