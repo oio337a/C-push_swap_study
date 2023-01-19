@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:33:48 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 11:46:18 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:38:35 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,40 @@ void	cost_calculate(t_deque *a_stack, t_deque *b_stack)
 		rra(a_stack);
 	}
 }
+/*
+우리의 로직
+
+1.최대 값, 최소 값, 중간 값 판별 (pa 이전 stack b 판별)
+	1. 만약 최소 값이라면, 인덱스 계산 후 ra 혹은 rra 실행(기존 최소값 -> 새로 들어온 최소값으로 재정의)
+	2. 만약 최대 값이라면, 인덱스 계산 후 ra 혹은 rra 실행 (동일)
+2. 중간값이라면 af, af + 1로
+// 박수환의 의견 a스텍을 순회하면서 bf의 값 + 1 인 값이 있으면, coast 계산 모든 친구들 계산하고 제일 적은 코스트 선정후 rra 실행
+
+int i = -1;
+int b_front;
+
+while (++i < b->len - 1)
+{
+	b_front = b->data[b->front + 1];
+	if (b_front < )
+}
+
+
+
+
+
+*/
+
+/*
+존시나 용미나 의견
+
+로직
+
+int i = 0;
+while(b_stack)
+	data = b_stack->data[i];
+	if (a_stack->min > data) // data 의 값이 ㅁ
+	if (a_stack->max < data)
+	else 
+
+*/	

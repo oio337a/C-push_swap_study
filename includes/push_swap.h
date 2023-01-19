@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:06:30 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 11:33:41 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:37:36 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	pa(t_deque *stack_a, t_deque *stack_b);
 void	pb(t_deque *stack_a, t_deque *stack_b);
 void	sa(t_deque *stack_b);
 void	sb(t_deque *stack_a);
-void	ss(t_deque *stack_a, t_deque *stack_b);
 void	ra(t_deque *stack_a);
 void	rb(t_deque *stack_b);
 void	rr(t_deque *stack_a, t_deque *stack_b);

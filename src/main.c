@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:07:26 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 19:23:36 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:34:18 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,6 @@
 
 static int	count_argu(int ac, char *av[])
 {
-	/*
-		./push_swap "1 2 3" 4 5 6
-		ac = 5
-
-		1 = 1 2 3
-		2 = 4
-		3 = 5
-		4 = 6
-		
-		@ ac만큼 반복
-			@ 첫 번째 문자 널이면 error
-			@ split ' '
-			@ split 한 2차원 배열 루프
-				@ 변형 atoi 로 num 추출
-				@ len++;
-	*/
 	char	**numbers;
 	int		i;
 	int		num;
@@ -66,5 +50,6 @@ int main(int ac, char *av[])
 		return (1);
 	len = count_argu(ac, av);
 	a_stack = init(len);
+	
 	return (0);
 }
