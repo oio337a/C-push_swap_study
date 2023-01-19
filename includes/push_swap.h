@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:06:30 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 19:22:30 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:33:41 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct s_deque
 	int	front;
 	int	rear;
 	int	len;
+	int	min;
+	int	max;
 }t_deque;
 
 t_deque	*init(int len);

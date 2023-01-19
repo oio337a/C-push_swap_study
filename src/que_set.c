@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:22:23 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 17:28:42 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:33:57 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ t_deque	*init(int len)
 	q->front = 0;
 	q->rear = 0;
 	q->len = len;
+	q->min = 0;
+	q->max = 0;
 	return (q);
 }
 

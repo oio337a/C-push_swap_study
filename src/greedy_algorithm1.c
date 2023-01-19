@@ -6,12 +6,11 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:44:29 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/18 19:33:25 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:26:50 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-//필요한 것
 
 int	get_stack_size(t_deque *stack)
 {
