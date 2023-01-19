@@ -6,19 +6,16 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:33:48 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 16:38:38 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:29:25 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	cost_calculate(t_deque *a_stack, t_deque *b_stack)
+int	cost_calculate(t_deque *a_stack, int b_data)
 {
-	int	i;
-	int	b_data;
 	int	cost;
 
-	b_data = b_stack->data[b_stack->front + 1 + i];
 	if (b_data < a_stack->data[a_stack->min])
 	{
 		cost = (a_stack->min - (a_stack->front + 1) + a_stack->len)
@@ -50,4 +47,3 @@ int	count_mid_cost(t_deque *a_stack, int data)
 	}
 	return (count);
 }
-

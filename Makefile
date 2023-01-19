@@ -13,7 +13,10 @@ LIB_DIR		= ./libft/
 LIB_NAME	= ./libft/libft.a
 INCS		= -I includes
 
-SRC			=	error.c main.c push_atoi.c que_set.c
+SRC			=	command_push.c command_reverse_rotate.c command_rotate.c command_swap.c \
+				error.c get_pivot.c greedy_algorithm1.c greedy_algorithm2.c main.c push_atoi.c \
+				que_data.c que_set.c validation.c
+
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRC))
 LIBS		=	$(addprefix $(LIB_DIR), $(LIB_NAME))
 OBJS		=	$(SRCS:.c=.o)

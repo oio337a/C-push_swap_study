@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:06:30 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 16:30:52 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:29:35 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,17 @@ void	rra(t_deque *stack_a);
 void	rrb(t_deque *stack_b);
 void	rrr(t_deque *stack_a, t_deque *stack_b);
 
+void	indexing_a_stack(t_deque *a_stack, int *tmp);
+int		*get_pivot(t_deque *a_stack);
+void	tmp_sort(int *arr, int start, int end);
+
 void	check_duplication(t_deque *stack);
 int		check_sorted(t_deque *stack, int *arr);
+
+int		get_stack_size(t_deque *stack);
+void	set_position(t_deque *stack, int *first, int *mid, int *last);
+void	a_stack_sort(t_deque *stack);
+void	preprocess(t_deque *a_stack, t_deque *b_stack);
 
 int		error(void);
 void	ft_free(char *strs[]);
@@ -63,8 +72,14 @@ int		ft_atoi2(const char *str);
 void	preprocess(t_deque *a_stack, t_deque *b_stack);
 int		is_empty(t_deque *q);
 int		get_stack_size(t_deque *stack);
+int		ft_atoi2(const char *str);
 
-int		cost_calculate(t_deque *a_stack, t_deque *b_stack);
+int		cost_calculate(t_deque *a_stack, int i);
 int		count_mid_cost(t_deque *a_stack, int data);
+
+int		*get_pivot(t_deque *a_stack);
+void	indexing_a_stack(t_deque *a_stack, int *tmp);
+void	tmp_sort(int *arr, int start, int end);
+void	fill_stack(int ac, char *av[], t_deque *a_stack);
 
 #endif
