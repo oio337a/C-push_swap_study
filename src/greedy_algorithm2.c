@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:33:48 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 22:07:55 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 22:20:41 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	count_mid_cost(t_deque *a_stack, int data)
 		count++;
 		i++;
 	}
+	
 	return (count);
 }
 

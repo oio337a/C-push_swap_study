@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:44:29 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 20:58:21 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/19 22:23:51 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	preprocess(t_deque *a_stack, t_deque *b_stack)
 			if (is_empty(b_stack))
 				rb(b_stack);
 		}
-		else if (a_stack->data[i] > pivot[0] && a_stack->data[i] < pivot[1])
+		else if (a_stack->data[i] > pivot[0] && a_stack->data[i] <= pivot[1])
 			pb(a_stack, b_stack);
 		else
 			ra(a_stack);
