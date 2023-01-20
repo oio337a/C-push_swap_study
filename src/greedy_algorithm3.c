@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   greedy_algorithm3.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suhwpark <suhwpark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 18:39:31 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/20 18:23:01 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:18:17 by suhwpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	use_rrb(t_deque *a_stack, t_deque *b_stack, int ra_count, int rrb_count)
 	if (ra_count > a_size / 2)
 	{
 		ra_count = a_size - ra_count;
-		if (ra_count == 0)
-			printf("!\n");
 		while (ra_count && rrb_count && (ra_count-- && rrb_count--))
 			rrr(a_stack, b_stack);
 		if (ra_count < rrb_count)
@@ -37,9 +35,9 @@ void	use_rrb(t_deque *a_stack, t_deque *b_stack, int ra_count, int rrb_count)
 	}
 	else
 	{
-		while (ra_count--)
+		while (ra_count && ra_count--)
 			ra(a_stack);
-		while (rrb_count--)
+		while (rrb_count && rrb_count--)
 			rrb(b_stack);
 	}
 }

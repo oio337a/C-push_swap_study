@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   greedy_algorithm2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: suhwpark <suhwpark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:33:48 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/20 20:24:01 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/20 20:07:42 by suhwpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int	cost_calculate(t_deque *a_stack, int b_data, int i)
 	if (b_data < a_stack->data[a_stack->min])
 	{
 		cost = ((a_stack->min - (a_stack->front + 1) + a_stack->len)
-			% a_stack->len) + i;
+				% a_stack->len) + i;
 		return (cost);
 	}
 	else if (b_data > a_stack->data[a_stack->max])
 	{
 		cost = ((a_stack->max - (a_stack->front + 1) + a_stack->len)
-			% a_stack->len) + 1 + i;
+				% a_stack->len) + 1 + i;
 		return (cost);
 	}
 	else
@@ -43,13 +43,12 @@ int	count_mid_cost(t_deque *a_stack, int data)
 	if ((a_stack->data[a_stack->rear] < data)
 		&& (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] > data))
 		return (0);
-	while (++i < get_stack_size(a_stack))
+	while (++i < get_stack_size(a_stack) - 1)
 	{
 		if ((a_stack->data[find_idx(a_stack->front + 1 + i, a_stack->len)] < data
 				&& a_stack->data[find_idx(a_stack->front + 2 + i, a_stack->len)] > data))
 			break ;
 		count++;
-		
 	}
 	return (count);
 }
@@ -81,14 +80,18 @@ int	*b_stack_cost(t_deque *a_stack, t_deque *b_stack)
 	int	b_len;
 	int	i;
 	int	b_data;
+	int	tmp;
 
+	tmp = 0;
 	b_len = get_stack_size(b_stack);
 	cost = (int *)malloc(sizeof(int) * b_len);
 	i = -1;
 	while (++i < b_len)
 	{
 		b_data = b_stack->data[find_idx((b_stack->front + 1) + i, b_stack->len)];
-		cost[i] = cost_calculate(a_stack, b_data, i);
+		// if (i > b_len / 2)
+		// 	tmp = b_len - i;
+		cost[i] = cost_calculate(a_stack, b_data, tmp);
 	}
 	return (cost);
 }
