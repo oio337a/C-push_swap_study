@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suhwpark <suhwpark@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:07:26 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/20 17:53:05 by suhwpark         ###   ########.fr       */
+/*   Updated: 2023/01/20 20:21:33 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,6 @@ int	main(int ac, char *av[])
 	while (!is_empty(b_stack))
 		greedy_sort(a_stack, b_stack);
 	while (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] != 1)
-		rra(a_stack);
+		rra(a_stack); 
 	return (0);
 }

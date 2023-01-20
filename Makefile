@@ -2,7 +2,7 @@
 NAME		= push_swap
 
 CC			= cc
-FLAGS		= -Wall -Werror -Wextra -g3
+FLAGS		= -Wall -Werror -Wextra
 AR			= ar rcs
 RM			= rm -f
 

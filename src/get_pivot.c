@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:29:40 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/20 15:18:29 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/20 20:22:30 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ void	indexing_a_stack(t_deque *a_stack, int *tmp)
 		while (++j < a_stack->len - 1)
 		{
 			if (a_stack->data[i] == tmp[j])
+			{
 				a_stack->data[i] = j + 1;
+				break;
+			}
 
 		}
 	}

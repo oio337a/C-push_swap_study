@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   greedy_algorithm2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suhwpark <suhwpark@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:33:48 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/20 17:52:08 by suhwpark         ###   ########.fr       */
+/*   Updated: 2023/01/20 20:24:01 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	cost_calculate(t_deque *a_stack, int b_data, int i)
 {
 	int	cost;
 
-	// printf("b_data : %d\n", b_data);
 	if (b_data < a_stack->data[a_stack->min])
 	{
 		cost = ((a_stack->min - (a_stack->front + 1) + a_stack->len)
@@ -26,7 +25,7 @@ int	cost_calculate(t_deque *a_stack, int b_data, int i)
 	else if (b_data > a_stack->data[a_stack->max])
 	{
 		cost = ((a_stack->max - (a_stack->front + 1) + a_stack->len)
-			% a_stack->len + 1 + i);
+			% a_stack->len) + 1 + i;
 		return (cost);
 	}
 	else

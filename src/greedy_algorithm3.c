@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   greedy_algorithm3.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suhwpark <suhwpark@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 18:39:31 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/20 17:35:16 by suhwpark         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:23:01 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	use_rrb(t_deque *a_stack, t_deque *b_stack, int ra_count, int rrb_count)
 			rrr(a_stack, b_stack);
 		if (ra_count < rrb_count)
 		{
-			while (rrb_count--)
+			while (rrb_count && rrb_count--)
 				rrb(b_stack);
 		}
 		else if (rrb_count < ra_count)
 		{
-			while (ra_count--)
+			while (ra_count && ra_count--)
 				rra(a_stack);
 		}
 	}
@@ -55,21 +55,21 @@ void	use_rb(t_deque *a_stack, t_deque *b_stack, int ra_count, int rb_count)
 			rr(a_stack, b_stack);
 		if (ra_count < rb_count)
 		{
-			while (rb_count--)
+			while (rb_count && rb_count--)
 				rb(b_stack);
 		}
 		else if (rb_count < ra_count)
 		{
-			while (ra_count--)
+			while (ra_count && ra_count--)
 				ra(a_stack);
 		}
 	}
 	else
 	{
 		ra_count = a_size - ra_count;
-		while (ra_count--)
+		while (ra_count && ra_count--)
 			rra(a_stack);
-		while (rb_count--)
+		while (rb_count && rb_count--)
 			rb(b_stack);
 	}
 }
