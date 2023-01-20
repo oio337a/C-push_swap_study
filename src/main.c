@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:07:26 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/20 15:24:30 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/20 17:53:05 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,54 +85,9 @@ int	main(int ac, char *av[])
 	}
 	b_stack = init(len + 1);
 	preprocess(a_stack, b_stack);
-	for (int i = 0; i < a_stack->len; i++)
-		printf("idx :%d value :%d\n", i, a_stack->data[i]);
-	printf("af : %d ar : %d\n", a_stack->front, a_stack->rear);
-	printf("---------------------------------------------------------\n");
-	for (int i = 0; i < b_stack->len; i++)
-		printf("idx :%d value :%d\n", i, b_stack->data[i]);
-	printf("bf : %d br : %d\n", b_stack->front, b_stack->rear);
 	while (!is_empty(b_stack))
 		greedy_sort(a_stack, b_stack);
 	while (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] != 1)
 		rra(a_stack);
-	for (int i = 0; i < a_stack->len; i++)
-		printf("idx :%d value :%d\n", i, a_stack->data[i]);
-	printf("f : %d r : %d\n", a_stack->front, a_stack->rear);
 	return (0);
 }
-
-
-
-/*
-
-	printf("??????????? %d\n", is_empty(b_stack));
-	while (is_empty(b_stack))
-		greedy_sort(a_stack, b_stack);
-	// while (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] == 1)
-	// 	rra(a_stack);
-	for (int i = 0; i < len + 1; i++)
-		printf("%d\n", a_stack->data[i]);
-	printf ("%d %d\n", a_stack->front, a_stack->rear);
-
-
-
-	// printf("is empty? \n%d\n", is_empty(b_stack));
-	// while (is_empty(b_stack) != 1)
-	// 	greedy_sort(a_stack, b_stack);
-	// while (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] != 1)
-	// {
-	// 	printf("rra!!!!!!!!!!!!!!!!!!!!!!!%d\n", a_stack->data[find_idx(a_stack->front + 1, a_stack->len)]);
-	// 	rra(a_stack);
-	// }
-	// for (int i = 0; i < a_stack->len; i++)
-	// {
-	// 	printf("after sort %d | ", a_stack->data[find_idx(a_stack->front + i, a_stack->len)]);
-	// }
-	// printf ("\n%d %d\n", a_stack->front, a_stack->rear);
-	// for (int i = 0; i < len + 1; i++)
-	// 	printf("after aaaaaaaaaaa%d | ", a_stack->data[i]);
-	// printf ("\n%d %d\n", a_stack->front, a_stack->rear);
-	// for (int i = 0; i < 3; i++)
-	// 	printf("bbbbbbbbbbb%d |", b_stack->data[(b_stack->front + 1 + i) % b_stack->len]);
-	*/

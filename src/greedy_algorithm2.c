@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:33:48 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/20 15:40:43 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/20 17:52:07 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ int	count_mid_cost(t_deque *a_stack, int data)
 
 	count = 1;
 	i = -1;
-	printf("--------------------------a_stack size!!!!!!%d\n", get_stack_size(a_stack) - 1);
-	while (++i < get_stack_size(a_stack) - 1)
+	if ((a_stack->data[a_stack->rear] < data)
+		&& (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] > data))
+		return (0);
+	while (++i < get_stack_size(a_stack))
 	{
-		printf("ㅈㅣㄴ자무사아여여ㅑ\n");
 		if ((a_stack->data[find_idx(a_stack->front + 1 + i, a_stack->len)] < data
 				&& a_stack->data[find_idx(a_stack->front + 2 + i, a_stack->len)] > data))
 			break ;
@@ -101,20 +102,9 @@ void	greedy_sort(t_deque *a_stack, t_deque *b_stack)
 
 	a_stack->min = get_a_min_index(a_stack);
 	a_stack->max = get_a_max_index(a_stack);
-	printf("min %d\n", a_stack->min);
-	printf("max %d\n", a_stack->max);
-	printf("min val %d\n", a_stack->data[a_stack->min]);
-	printf("max val %d\n", a_stack->data[a_stack->max]);
 	cost = b_stack_cost(a_stack, b_stack);
 	b_len = get_stack_size(b_stack);
 	min_index = get_b_min_index(cost, b_len);
-	printf ("b lewn %d\n", b_len);
-	for (int i = 0; i < b_len; i++)
-		printf("--------cost[%d] : %d---------\n", i, cost[i]);
-	// printf("min_index %d\n", min_index);
-	// for (int i = 0; i < b_len; i++)
-	// 	printf("cost[%d] : %d\n", i, cost[i]);
-	// exit(1);
 	if (min_index > b_len / 2)
 		use_rrb(a_stack, b_stack, cost[min_index], b_len - min_index);
 	else
