@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:44:29 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 23:21:43 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:32:06 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	preprocess(t_deque *a_stack, t_deque *b_stack)
 
 	pivot = get_pivot(a_stack);
 	i = 0;
+	printf("p1 : %d p2 : %d\n", pivot[0], pivot[1]);
 	// greedy 시작 시 따로 빼서 먼저 묻기
 	if (get_stack_size(a_stack) == 3 && is_empty(b_stack))
 	{

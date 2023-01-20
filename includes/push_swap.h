@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:06:30 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 21:58:26 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:57:03 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int		is_empty(t_deque *q);
 int		get_stack_size(t_deque *stack);
 int		ft_atoi2(const char *str);
 
-int		cost_calculate(t_deque *a_stack, int b_data);
+int		cost_calculate(t_deque *a_stack, int b_data, int i);
 int		count_mid_cost(t_deque *a_stack, int data);
 
 int		*get_pivot(t_deque *a_stack);

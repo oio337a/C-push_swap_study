@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 18:39:31 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 23:37:13 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:08:47 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ void	use_rrb(t_deque *a_stack, t_deque *b_stack, int ra_count, int rrb_count)
 	if (ra_count > a_size / 2)
 	{
 		ra_count = a_size - ra_count;
-		while (ra_count-- && rrb_count--)
+		if (ra_count == 0)
+			printf("!\n");
+		while (ra_count && rrb_count && (ra_count-- && rrb_count--))
 			rrr(a_stack, b_stack);
 		if (ra_count < rrb_count)
 		{
@@ -49,7 +51,7 @@ void	use_rb(t_deque *a_stack, t_deque *b_stack, int ra_count, int rb_count)
 	a_size = get_stack_size(a_stack);
 	if (ra_count < a_size / 2)
 	{
-		while (ra_count-- && rb_count--)
+		while (ra_count && rb_count && (ra_count-- && rb_count--))
 			rr(a_stack, b_stack);
 		if (ra_count < rb_count)
 		{
@@ -100,9 +102,9 @@ int	get_a_max_index(t_deque *a_stack)
 	int	len;
 	int	max;
 	int	max_index;
-	
+
 	i = 0;
-	max = a_stack->data[find_idx((a_stack->front + 1 + i), a_stack->len)];
+	max = a_stack->data[find_idx((a_stack->front + 1), a_stack->len)];
 	max_index = find_idx((a_stack->front + 1 + i), a_stack->len);
 	len = get_stack_size(a_stack);
 	while (++i < len)

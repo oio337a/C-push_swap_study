@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:07:26 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 23:23:28 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:24:30 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ int	main(int ac, char *av[])
 	printf("bf : %d br : %d\n", b_stack->front, b_stack->rear);
 	while (!is_empty(b_stack))
 		greedy_sort(a_stack, b_stack);
-	// while (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] != 1)
-	// 	rra(a_stack);
+	while (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] != 1)
+		rra(a_stack);
 	for (int i = 0; i < a_stack->len; i++)
 		printf("idx :%d value :%d\n", i, a_stack->data[i]);
 	printf("f : %d r : %d\n", a_stack->front, a_stack->rear);
