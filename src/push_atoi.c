@@ -6,12 +6,12 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:52:14 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/20 15:07:00 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/20 21:25:21 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
+//얘 안돌아요
 static int	check_range(long long num)
 {
 	if (num > 2147483647L || num < -2147483648L)

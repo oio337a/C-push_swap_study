@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:22:23 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/19 19:37:28 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/20 21:24:43 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ t_deque	*init(int len)
 
 	q = malloc(sizeof(t_deque));
 	if (!q)
+	{
+		printf("못들어옴\n");
 		exit(error());
+	}
 	q->data = malloc(sizeof(int) * len);
 	if (!q->data)
 		exit(error());

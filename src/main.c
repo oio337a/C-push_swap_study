@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:07:26 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/20 20:21:33 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/20 21:26:25 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,9 @@ int	main(int ac, char *av[])
 	len = count_argu(ac, av);
 	a_stack = init(len + 1);
 	fill_stack(ac, av, a_stack);
+	// for (int i = 0; i < a_stack->len; i++)
+	// 	printf("idx : %d value :%d\n", i, a_stack->data[i]);
+	// printf("f : %d, r : %d\n", a_stack->front, a_stack->rear);
 	check_duplication(a_stack);
 	if (len == 2)
 	{
@@ -85,9 +88,16 @@ int	main(int ac, char *av[])
 	}
 	b_stack = init(len + 1);
 	preprocess(a_stack, b_stack);
+	// for (int i = 0; i < a_stack->len; i++)
+	// 	printf("idx : %d value :%d\n", i, a_stack->data[i]);
+	// printf("f : %d, r : %d\n", a_stack->front, a_stack->rear);
 	while (!is_empty(b_stack))
 		greedy_sort(a_stack, b_stack);
 	while (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] != 1)
-		rra(a_stack); 
+		ra(a_stack);
+	//확인용
+	// for (int i = 0; i < a_stack->len; i++)
+	// 	printf("idx : %d value :%d\n", i, a_stack->data[i]);
+	// printf("f : %d, r : %d\n", a_stack->front, a_stack->rear);
 	return (0);
 }
