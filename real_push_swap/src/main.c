@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:07:26 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/24 16:25:34 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:53:35 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	count_argu(int ac, char *av[])
 	int		i;
 	int		num;
 	int		len;
-	
+
 	len = 0;
 	while (--ac)
 	{
@@ -41,7 +41,7 @@ static int	count_argu(int ac, char *av[])
 	return (len);
 }
 
-void	fill_stack(int ac, char *av[], t_deque *a_stack)
+static void	fill_stack(int ac, char *av[], t_deque *a_stack)
 {
 	char	**numbers;
 	int		i;
@@ -63,6 +63,24 @@ void	fill_stack(int ac, char *av[], t_deque *a_stack)
 		}
 		ft_free(numbers);
 	}
+}
+
+static void	last_sort(t_deque *a_stack)
+{
+	int	i;
+
+	i = -1;
+	while (++i < a_stack->len)
+		if (a_stack->data[find_idx(a_stack->front + 1 + i, a_stack->len)] == 1)
+			break ;
+	if (i > a_stack->len / 2)
+	{
+		while (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] != 1)
+			rra(a_stack);
+	}
+	else
+		while (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] != 1)
+			ra(a_stack);
 }
 
 int	main(int ac, char *av[])
@@ -87,19 +105,6 @@ int	main(int ac, char *av[])
 	preprocess(a_stack, b_stack);
 	while (!is_empty(b_stack))
 		greedy_sort(a_stack, b_stack);
-	int i = -1;
-	while (++i < a_stack->len)
-	{
-		if (a_stack->data[find_idx(a_stack->front + 1 + i, a_stack->len)] == 1)
-			break;
-	}
-	if (i > a_stack->len / 2)
-	{
-		while (a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] != 1)
-			rra(a_stack);
-	}
-	else
-		while(a_stack->data[find_idx(a_stack->front + 1, a_stack->len)] != 1)
-			ra(a_stack);
+	last_sort(a_stack);
 	return (0);
 }

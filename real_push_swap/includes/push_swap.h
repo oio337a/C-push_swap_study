@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:06:30 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/24 16:02:10 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:09:06 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@
 # include "../libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
-
-// 이건 평가전 지워야 합니다.
-#include <stdio.h>
-//
 
 typedef struct s_deque
 {
@@ -78,7 +74,6 @@ int		count_mid_cost(t_deque *a_stack, int data);
 int		*get_pivot(t_deque *a_stack);
 void	indexing_a_stack(t_deque *a_stack, int *tmp);
 void	tmp_sort(int *arr, int start, int end);
-void	fill_stack(int ac, char *av[], t_deque *a_stack);
 void	greedy_sort(t_deque *a_stack, t_deque *b_stack);
 
 void	use_rb(t_deque *a_stack,
@@ -91,4 +86,10 @@ int		get_a_min_index(t_deque *a_stack);
 int		get_a_max_index(t_deque *a_stack);
 int		ft_abs(int n);
 
+int		cost_calculate2(t_deque *a_stack, int b_data, int i);
+int		*b_stack_cost2(t_deque *a_stack, t_deque *b_stack);
+void	preprocess_utils(t_deque *a, t_deque *b, int *pivot, int i);
+
+void	util_rrb(t_deque *a, t_deque *b, int ra_count, int rrb_count);
+void	use_rr(t_deque *a_stack, t_deque *b_stack, int ra_count, int rb_count);
 #endif

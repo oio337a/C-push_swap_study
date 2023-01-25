@@ -6,7 +6,7 @@
 /*   By: sohyupar <sohyupar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:29:40 by sohyupar          #+#    #+#             */
-/*   Updated: 2023/01/20 20:58:16 by sohyupar         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:55:12 by sohyupar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,6 @@ int	*get_pivot(t_deque *a_stack)
 	while (++i < a_stack->len - 1)
 		tmp[i] = a_stack->data[i + 1];
 	tmp_sort(tmp, 0, a_stack->len - 2);
-	// for (int i = 0; i < a_stack->len - 1; i++)
-	// 	printf("idx : %d tmp _ value :%d\n", i, tmp[i]);
 	if (!check_sorted(a_stack, tmp))
 	{
 		free(tmp);
@@ -84,9 +82,6 @@ int	*get_pivot(t_deque *a_stack)
 	pivot[0] = (a_stack->len - 2) / 3;
 	pivot[1] = (a_stack->len - 2) - ((a_stack->len - 2) / 3);
 	indexing_a_stack(a_stack, tmp);
-	// for (int i = 1; i < a_stack->len; i++)
-	// 	printf("idx : %d value :%d\n", i, a_stack->data[i]);
-	// printf("f : %d, r : %d\n", a_stack->front, a_stack->rear);
 	free(tmp);
 	return (pivot);
 }
